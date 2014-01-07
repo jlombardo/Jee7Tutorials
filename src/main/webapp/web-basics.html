@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- 
+    This page present a simple, animated tour of the anatomy of a URL. It does this
+    with the help of the 'foundation' framework and a little bit of javascript,
+    including JQuery.
+    
+    by Jim Lombardo, WCTC Web and Software Developer Instructor
+    Version 1.00
+-->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JEE7 Tutorials :: Home</title>
+    <link rel="stylesheet" href="resources/css/foundation.min.css" />
+    
+    <!-- Custom styles just for this page -->
+    <style type="text/css">
+        .jhighlight {
+            border-style: none;
+            background-color: green;
+            color: white;
+        }
+        .junhighlight {
+            border-style: none;
+            background-color: transparent;
+            color: black;
+        }
+        .myhead {
+            color: #1695ce;
+            font-weight:500;
+        }
+    </style>
+    
+    <!-- Supports older browsers and detects mobile devices -->
+    <script src="resources/js/modernizr.js"></script>
+  </head>
+    <body>
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <!-- Title Area -->
+              <li class="name">
+                <h1>
+                  <a href="index.html">
+                    JEE 7 Tutorials @WCTC
+                  </a>
+                </h1>
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+            </ul>
+         
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                  <a href="#">Learning Trails</a>
+                  <ul class="dropdown">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://www.wctc.edu">About Us</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+          </nav>
+          <!-- End Top Bar -->
+          
+        <div style="height:3em;"></div>
+        
+        <div class="row">
+            <div class="small-8 large-centered columns">
+              <h2 class="myhead">Anatomy of a URL (web address):</h2>
+            </div>
+        </div>
+        
+        <!-- Hotspots for the animated tour provided by joyride.js. Ids must match the data-id below -->
+        <div class="row">
+            <div class="small-8 small-centered columns">
+                <h4>
+                    <span class="junhighlight" id="tp">http://</span>
+                    <span class="junhighlight" id="domain">localhost</span>:
+                    <span class="junhighlight" id="port">8080</span>/
+                    <span class="junhighlight" id="app">Jee7Tutorials</span>/
+                    <span class="junhighlight" id="page">index.html</span>
+                    <span class="junhighlight" id="qs">?id=5&amp;v=7</span>
+                </h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-8 small-centered columns">
+              <a id="startBtn" href="#" class="button small">Let's Get Started</a>
+            </div>
+        </div>
+        
+        <div style="height:3em;"></div>
+        
+        <div class="row">
+            <div class="small-8 small-centered columns">               
+              <div class="section-container tabs" data-section>
+                <section class="section">
+                  <h5 class="title" style="color: rgb(0, 140, 186);">Key Concepts</h5>
+                  <p>When you type in a web address (URL) into your browser an hit ENTER, 
+                  you are sending a request to a web server for information in the form of 
+                  a web page or server-side program. In addition to what is being requested, 
+                  you can also send data to to server in the form of QueryString Parameters 
+                  or form input. <img src="resources/images/request-response.png" alt=""></p>
+                  <p>Web clients (browser) communicate with with web servers in a series of 
+                  request-response cycles. In the request phase, if requesting a regular web page 
+                  (".html") the server will look for the page and return a 404 error if not found, 
+                  or a stream of bytes representing the code in the page file (but the file iteself). 
+                  This is called the "Response" phase. Finally, the browser interprets this code 
+                  and renders the web page as a result. The fact that at least two computers are 
+                  involved in this (client and server) is why the web is inherently a distributed 
+                  computer environment.</p>
+                  <p>If the page name is suffixed by something other than ".html" -- for example 
+                  ".jsp" meaning the page contains some java code -- then the server will look for 
+                  the java and execute it first, and then modify the html in the byte stream to 
+                  contain any results from the execution of that code. Works the same way for 
+                  PHP and ASP.NET and other web technologies.</p>
+                </section>
+              </div>
+            </div>
+        </div>  
+        
+        <!-- 
+            This is how joyride coordinates the popups for the animated tour.
+            The data-id value must match the Id of the hotspots above.
+        -->
+        <ol class="joyride-list" data-joyride>
+          <li data-id="tp" data-text="Next" data-options="tip_location: top">
+            <p>
+                This is the transport protocol, which determines the rules for communication
+                between client and server. Others are ftp:// and telnet:// e.g.
+            </p>
+          </li>
+          <li data-id="domain" data-text="Next" data-options="tip_location: top">
+            <p>
+                This is the server address, which is usually based on a domain name. 
+                The 'www' part is optional and must be configured by a server administrator. 
+                And it doesn't have to be 'www' alone. Try this one: http://sandbox.byteshop.net 
+                'localhost' is a built-in name for a
+                developer's own machine. This could also be an IP address like 127.0.0.1
+            </p>
+          </li>
+          <li data-id="port" data-text="Next" data-options="tip_location: top">
+            <p>
+                This is the port number for a developer web server. Production servers usually use 
+                the default value of 80, and then it isn't needed in the URL. Port numbers
+                allow for multiple services to be running on a single machine -- even
+                multiple web servers.
+            </p>
+          </li>
+          <li data-id="app" data-text="Next" data-options="tip_location: top">
+            <p>
+                This is the web application name, or folder name within a web app. Folders
+                can be nested to any depth. If the web app is installed at the root, there
+                is no web app name, just the domain name. By using web app folders you can
+                have many web apps on a single server.
+            </p>
+          </li>
+          <li data-id="page" data-text="Next" data-options="tip_location: top">
+            <p>
+                This is the name of the web page being requested. Or, it could be the name
+                of a program running on the server. File name extensions are not limited to '.html' 
+                Others include '.jsp', '.php', '.aspx', '.pl', '.cgi' and many more. The
+                extension determines what the server does upon receiving the request.
+            </p>
+          </li>
+          <li data-id="qs" data-text="End" data-options="tip_location: top">
+            <p>
+                This is optional data that can be passed to the server with the request. 
+                It's called a QueryString, begins with a '?' symbol and has key=value pairs 
+                called 'parameters.' Multiple pairs are separated by the ampersand symbol. 
+                Programs running on the server can read these and use them in data processing.</p>
+          </li>
+
+        </ol>
+        
+        <!-- Footer -->
+             
+          <footer class="row">
+            <div class="small-12 columns">
+              <hr />
+              <div class="row">
+                <div class="small-6 columns">
+                  <p style="font-size: small;">&copy; Copyright 2014 by Waukesha County Technical College. All rights reserved.</p>
+                </div>
+                <div class="small-6 columns">
+                  <ul class="inline-list right">
+                    <li style="font-size: small;"><a href="index.html">Home</a></li>
+                    <li style="font-size: small;">|</li>
+                    <li style="font-size: small;"><a href="web-basics.html">Web Basics</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+         
+          <!-- End Footer -->        
+        
+        <!-- Javascript libraries needed by fondation. Always include at bottom of body. -->
+        <script src="resources/js/jquery.min.js"></script>
+        <script src="resources/js/foundation.min.js"></script>
+        <script src="resources/js/foundation/foundation.joyride.js"></script>
+        <script src="resources/js/vendor/jquery.cookie.js"></script>
+        
+        <!-- My custom app script -->
+        <script src="resources/js/app.js"></script>
+
+    </body>
+</html>
