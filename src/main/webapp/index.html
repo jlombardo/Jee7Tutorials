@@ -15,13 +15,17 @@
     
     <!-- Custom styles just for this page -->
     <style type="text/css">
-        
+        .myhead {
+            color: #1695ce;
+            font-weight:500;
+        }
     </style>
     
     <!-- Supports older browsers and detects mobile devices -->
     <script src="resources/js/modernizr.js"></script>
   </head>
     <body>
+        <div class="fixed">
          <nav class="top-bar" data-topbar>
             <ul class="title-area">
               <!-- Title Area -->
@@ -42,6 +46,7 @@
                 <li class="has-dropdown">
                   <a href="#">Learning Trails</a>
                   <ul class="dropdown">
+                    <li class="active"><a href="index.html">Home</a></li>
                     <li><a href="web-basics.html">Web Basics</a></li>
                     <li class="divider"></li>
                     <li><a href="http://www.wctc.edu">About Us</a></li>
@@ -50,7 +55,7 @@
               </ul>
             </section>
           </nav>
-         
+        </div>
           <!-- End Top Bar -->
          
          
@@ -60,12 +65,12 @@
 
             <div class="large-9 columns">
          
-              <h3>Welcome!</h3>
+              <h3 class="myhead">Welcome!</h3>
               <p>We're web and software developer instructors at Waukesha County Technical College and 
               we're <em>psyched</em> to bring you Java Enterprise Edition (java web development) training 
               using the latest technology of the web. In other words, we eat our own dog food. Building 
               a site like this takes time, so please excuse our mess during construction. This could 
-              take a while :-)</p>                
+              take a while :-)<br>Click Learning Trails to get started.</p>                
                 
               <h5 class="title" style="color: rgb(0, 140, 186);">Technology Highlighted</h5>
               <div style="margin-top:20px;" class="section-container tabs" data-section>
@@ -81,7 +86,7 @@
                 </section>
               </div>
                 
-              <h3>Get in Touch</h3>
+              <h3 class="myhead">Get in Touch</h3>
               <p>We'd love to hear from you. Do you like this site ... or hate it? 
               We won't take offense. Let us know how we can improve it; let us know 
               what you'd like to see. And if we're doing something particiularly well,

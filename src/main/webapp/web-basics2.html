@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!-- 
+    This page present a simple, animated tour of the anatomy of a URL. It does this
+    with the help of the 'foundation' framework and a little bit of javascript,
+    including JQuery.
+    
+    by Jim Lombardo, WCTC Web and Software Developer Instructor
+    Version 1.00
+-->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JEE7 Tutorials :: Home</title>
+    <link rel="stylesheet" href="resources/css/foundation.min.css" />
+    
+    <!-- Custom styles just for this page -->
+    <style type="text/css">
+        .jhighlight {
+            border-style: none;
+            background-color: green;
+            color: white;
+        }
+        .junhighlight {
+            border-style: none;
+            background-color: transparent;
+            color: black;
+        }
+        .head1 {
+            color: #1695ce;
+            font-weight:500;
+        }
+        .head2 {
+            color: #04af18;
+            font-weight:500;
+        }
+        .imgPopup {
+            background-color: #b6edff;
+            z-index: 7;
+            overflow: visible;
+            position: absolute;
+            padding: 10px;
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+            filter: alpha(opacity=90);
+            opacity: 0.9;
+            
+            -webkit-box-shadow: 10px 10px 5px #888888;
+            box-shadow: 10px 10px 5px #888888;
+        }
+        .redEm {
+            color: red;
+            font-weight:bold;
+        }
+
+    </style>
+    
+    <!-- Supports older browsers and detects mobile devices -->
+    <script src="resources/js/modernizr.js"></script>
+  </head>
+    <body>
+       <div class="fixed">
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+              <!-- Title Area -->
+              <li class="name">
+                <h1>
+                  <a href="index.html">
+                    JEE 7 Tutorials @WCTC
+                  </a>
+                </h1>
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+            </ul>
+         
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                  <a href="#">Learning Trails</a>
+                  <ul class="dropdown">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="web-basics.html">Web Basics</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://www.wctc.edu">About Us</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+          </nav>
+
+          <!-- End Top Bar -->
+          
+          <!-- Sub Nav -->
+          <div class="row">
+            <div class="small-10 small-centered columns">
+                  <dl class="sub-nav"> 
+                      <dt>Prev Lesson:</dt> 
+                      <dd class="active"><a href="web-basics.html">Anatomy of a URL</a></dd> 
+                      <dt>Next Lesson:</dt> 
+                      <dd class="active"><a href="web-basics3.html">Dynamic Server Responses</a></dd> 
+                  </dl>
+            </div>
+        </div>
+      </div>
+          <!-- End Sub Nav -->
+        
+        <div class="row">
+            <div class="small-10 small-centered columns">
+              <h2 class="head1">How the Server Responds</h2>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="small-10 small-centered columns">
+              <h3 class="head2">Given this HTTP GET request:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-10 small-centered columns">
+                <h4>
+                    http://
+                    <span class="junhighlight" id="server">localhost:8080</span>/
+                    <span class="junhighlight" id="folder">Jee7Tutorials</span>/
+                    <span class="jhighlight" id="page">staticPage.html</span>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-8 small-centered columns">
+              <img src="resources/images/request-response2.jpeg" border="0" width="348" height="145"
+               alt="request-response image" usemap="#req-resp-map"/>
+              <map name="req-resp-map" id="req-resp-map">
+                <area shape="rect" coords="255,13,337,134" title="server" href="#" 
+                  onmouseover="togglePopup('#serverTip','on')" onmouseout="togglePopup('#serverTip','off')" />
+                <area shape="rect" coords="119,33,221,71" title="request" href="#" 
+                  onmouseover="togglePopup('#requestTip','on')" onmouseout="togglePopup('#requestTip','off')" />
+                <area shape="rect" coords="117,83,219,121" title="response" href="#" 
+                  onmouseover="togglePopup('#responseTip','on')" onmouseout="togglePopup('#responseTip','off')" />
+                <area shape="rect" coords="10,55,94,119" title="rendered" href="#" 
+                  onmouseover="togglePopup('#renderedTip','on')" onclick="location.href='staticPage.html'" 
+                  onmouseout="togglePopup('#renderedTip','off')" />
+              </map>
+              
+              <!-- These are hidden layers that activate when mouseover events happen on image -->
+              <div id="requestTip" style="top:75px; left:150px; height:50px; width:300px;" class="hide imgPopup">
+                  <span>Asking server for file:</span> <span class="redEm">staticPage.html</span>
+              </div>
+              <div id="serverTip" style="top:50px; left:300px; height:350; width:400px;" class="hide imgPopup">
+                  <p>Server looks for file <span class="redEm">staticPage.html</span> on disk in the &quot;Jee7Tutorials&quot; folder.</p>
+                  <p><img src="resources/images/html-file.jpeg" alt="html file"></p>
+                  <p>Returns bytestream of characters containing code in file, or &quot;404 Page Not 
+                  Found&quot; error.</p>
+              </div>
+              <div id="responseTip" style="top:130px; left:150px; height:200; width:470px;" class="hide imgPopup">
+                  <p>The HTTP Response comes back as a bytestream of characters representing the HTML, 
+                  JavaScript and CSS code in the file, but not the file itself.</p>
+                  <p><img src="resources/images/bytestream.gif" alt="bytestream"></p>
+              </div>
+              <div id="renderedTip" style="top:20px; left:120px; width:470px;" class="hide imgPopup">
+                  <p>The browser on the client machine interprets the code returned in the HTTP Response 
+                  and renders it on screen as a pixelated image. It takes this: </p>
+                  <p><img src="resources/images/staticPageClip.gif" alt="static page code"></p>
+                  <p> ... and turns it into (renders it to) ...</p>
+                  <p>well, see for yourself -- click your mouse on the screen icon 
+                  to see the rendered page, then click the back button in your browser to return to this page.
+                  </p>
+              </div>
+              <!-- end hidden layers -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-10 small-centered columns">
+                  <div class="panel">
+                      <p>The client (browser) sends an HTTP GET request to the 
+                      <a href="#" onmouseover="toggleHighlight('#page','#server')" 
+                      onmouseout="toggleHighlight('#server','#page')">server</a> for 
+                      the file name highlighted above (<em>hover your mouse over various parts of 
+                      the image to see what we mean</em>). The server then looks for the file in 
+                      the folder <a href="#" onmouseover="toggleHighlight('#page','#folder')" 
+                      onmouseout="toggleHighlight('#folder','#page')">Jee7Tutorials</a>. 
+                      If it's found a bytestream containing all of the 
+                      characters in the file are sent back to the client where the web browser 
+                      interprets that code (using HTML, JavaScript and CSS processing engines) and 
+                      then renders the result as pixel-perfect image of what the code represents. 
+                      If the fle is not found by the server, a "404 Page Not Found" error is returned.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-8 small-centered columns">
+             
+            </div>
+        </div>
+        
+        
+        
+        <!-- Footer -->
+             
+          <footer class="row">
+            <div class="small-12 columns">
+              <hr />
+              <div class="row">
+                <div class="small-6 columns">
+                  <p style="font-size: small;">&copy; Copyright 2014 by Waukesha County Technical College. All rights reserved.</p>
+                </div>
+                <div class="small-6 columns">
+                  <ul class="inline-list right">
+                    <li style="font-size: small;"><a href="index.html">Home</a></li>
+                    <li style="font-size: small;">|</li>
+                    <li style="font-size: small;"><a href="web-basics.html">Web Basics</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+         
+          <!-- End Footer -->        
+        
+        <!-- Javascript libraries needed by fondation. Always include at bottom of body. -->
+        <script src="resources/js/jquery.min.js"></script>
+        <script src="resources/js/foundation.min.js"></script>
+        <script src="resources/js/foundation/foundation.joyride.js"></script>
+        <script src="resources/js/vendor/jquery.cookie.js"></script>
+        
+        <!-- My custom app script -->
+        <script>
+            $(document).foundation();
+            function toggleHighlight(on_id, off_id) {
+                $(on_id).removeClass('jhighlight').addClass('junhighlight');
+                $(off_id).removeClass('junhighlight').addClass('jhighlight');
+            }
+            function togglePopup(id, state) {
+                if(state == "on") {
+                    $(id).removeClass('hide');
+                } else {
+                    $(id).addClass('hide');
+                }
+            }
+        </script>
+
+    </body>
+</html>
