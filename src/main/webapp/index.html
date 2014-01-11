@@ -12,13 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JEE7 Tutorials :: Home</title>
     <link rel="stylesheet" href="resources/css/foundation.min.css" />
+    <link rel="stylesheet" href="resources/css/app.css" />
     
     <!-- Custom styles just for this page -->
     <style type="text/css">
-        .myhead {
-            color: #1695ce;
-            font-weight:500;
-        }
     </style>
     
     <!-- Supports older browsers and detects mobile devices -->
@@ -94,7 +91,7 @@
                 
              <div class="section-container tabs" data-section>
                 <section class="section">
-                  <h5 class="title"><a href="mailto:jlombardo@wctc.edu">Click Here to Send Email</a></h5>
+                  <a class="button success radius tiny" href="mailto:jlombardo@wctc.edu">Click Here to Send Email</a>
                 </section>
               </div>
             </div>
@@ -151,11 +148,9 @@
         
         <!-- Javascript libraries needed by fondation. Always include at bottom of body. -->
         <script src="resources/js/jquery.min.js"></script>
+        <script src="resources/js/vendor/fastclick.js"></script>
         <script src="resources/js/foundation.min.js"></script>
-        <script src="js/foundation/foundation.topbar.js"></script>
-        <script src="resources/js/foundation/foundation.joyride.js"></script>
-        <script src="resources/js/vendor/jquery.cookie.js"></script>
-        
+
         <!-- My custom app script -->
         <script>
             $(document).foundation();

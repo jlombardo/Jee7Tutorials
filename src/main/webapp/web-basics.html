@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!-- 
-    This page present a simple, animated tour of the anatomy of a URL. It does this
-    with the help of the 'foundation' framework and a little bit of javascript,
-    including JQuery.
+    This page discusses the basic request-response data flow betweeen
+    client and server.
     
     by Jim Lombardo, WCTC Web and Software Developer Instructor
     Version 1.00
@@ -13,23 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JEE7 Tutorials :: Home</title>
     <link rel="stylesheet" href="resources/css/foundation.min.css" />
+    <link rel="stylesheet" href="resources/css/app.css" />
     
     <!-- Custom styles just for this page -->
     <style type="text/css">
-        .jhighlight {
-            border-style: none;
-            background-color: green;
-            color: white;
-        }
-        .junhighlight {
-            border-style: none;
-            background-color: transparent;
-            color: black;
-        }
-        .myhead {
-            color: #1695ce;
-            font-weight:500;
-        }
     </style>
     
     <!-- Supports older browsers and detects mobile devices -->
@@ -71,7 +57,7 @@
           
           <!-- Sub Nav -->
           <div class="row">
-            <div class="small-8 large-centered columns">
+            <div class="medium-8 medium-centered columns">
                   <dl class="sub-nav"> 
                       <dt>Next Lesson:</dt> 
                       <dd class="active"><a href="web-basics2.html">Static Server Responses</a></dd> 
@@ -82,14 +68,14 @@
           <!-- End Sub Nav -->
         
         <div class="row">
-            <div class="small-8 large-centered columns">
+            <div class="medium-8 medium-centered columns">
               <h2 class="myhead">Anatomy of a URL (GET Request):</h2>
             </div>
         </div>
         
         <!-- Hotspots for the animated tour provided by joyride.js. Ids must match the data-id below -->
         <div class="row">
-            <div class="small-8 small-centered columns">
+            <div class="medium-8 medium-centered columns">
                 <h4>
                     <span class="junhighlight" id="tp">http://</span>
                     <span class="junhighlight" id="domain">localhost</span>:
@@ -102,15 +88,15 @@
         </div>
 
         <div class="row">
-            <div class="small-8 small-centered columns">
-              <a id="startBtn" href="#" class="button small">Let's Get Started</a>
+            <div class="medium-8 medium-centered columns">
+              <a id="startBtn" href="#" class="button small radius success">Let's Get Started</a>
             </div>
         </div>
         
         <div style="height:.75em;"></div>
         
         <div class="row">
-            <div class="small-8 small-centered columns">               
+            <div class="medium-8 medium-centered columns">               
               <div class="section-container tabs" data-section>
                 <section class="section">
                   <h5 class="title" style="color: rgb(0, 140, 186);">Key Concepts</h5>
@@ -118,7 +104,7 @@
                   you are sending a request to a web server for information in the form of 
                   a web page or server-side program. In addition to what is being requested, 
                   you can also send data to to server in the form of QueryString Parameters 
-                  or form input. <img src="resources/images/request-response.png" alt=""></p>
+                  or form input. <img style="margin-top:8px;" src="resources/images/request-response.png" alt="request-response image"></p>
                   <p>Web clients (browser) communicate with with web servers in a series of 
                   request-response cycles. In the request phase, if requesting a regular web page 
                   (".html") the server will look for the page and return a 404 error if not found, 
@@ -194,13 +180,13 @@
         <!-- Footer -->
              
           <footer class="row">
-            <div class="small-12 columns">
+            <div class="medium-12 columns">
               <hr />
               <div class="row">
-                <div class="small-6 columns">
+                <div class="medium-6 columns">
                   <p style="font-size: small;">&copy; Copyright 2014 by Waukesha County Technical College. All rights reserved.</p>
                 </div>
-                <div class="small-6 columns">
+                <div class="medium-6 columns">
                   <ul class="inline-list right">
                     <li style="font-size: small;"><a href="index.html">Home</a></li>
                     <li style="font-size: small;">|</li>
@@ -215,10 +201,9 @@
         
         <!-- Javascript libraries needed by fondation. Always include at bottom of body. -->
         <script src="resources/js/jquery.min.js"></script>
+        <script src="resources/js/vendor/fastclick.js"></script>
         <script src="resources/js/foundation.min.js"></script>
-        <script src="resources/js/foundation/foundation.joyride.js"></script>
-        <script src="resources/js/vendor/jquery.cookie.js"></script>
-        
+
         <!-- My custom app script -->
         <script src="resources/js/app.js"></script>
 

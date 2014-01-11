@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-    This page present a simple, animated tour of the anatomy of a URL. It does this
-    with the help of the 'foundation' framework and a little bit of javascript,
-    including JQuery.
+    This page discusses how the server responds to a static GET request.
     
     by Jim Lombardo, WCTC Web and Software Developer Instructor
     Version 1.00
@@ -13,45 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JEE7 Tutorials :: Home</title>
     <link rel="stylesheet" href="resources/css/foundation.min.css" />
+    <link rel="stylesheet" href="resources/css/app.css" />
     
     <!-- Custom styles just for this page -->
     <style type="text/css">
-        .jhighlight {
-            border-style: none;
-            background-color: green;
-            color: white;
-        }
-        .junhighlight {
-            border-style: none;
-            background-color: transparent;
-            color: black;
-        }
-        .head1 {
-            color: #1695ce;
-            font-weight:500;
-        }
-        .head2 {
-            color: #04af18;
-            font-weight:500;
-        }
-        .imgPopup {
-            background-color: #b6edff;
-            z-index: 7;
-            overflow: visible;
-            position: absolute;
-            padding: 10px;
-            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
-            filter: alpha(opacity=90);
-            opacity: 0.9;
-            
-            -webkit-box-shadow: 10px 10px 5px #888888;
-            box-shadow: 10px 10px 5px #888888;
-        }
-        .redEm {
-            color: red;
-            font-weight:bold;
-        }
-
     </style>
     
     <!-- Supports older browsers and detects mobile devices -->
@@ -93,7 +56,7 @@
           
           <!-- Sub Nav -->
           <div class="row">
-            <div class="small-10 small-centered columns">
+            <div class="medium-10 medium-centered columns">
                   <dl class="sub-nav"> 
                       <dt>Prev Lesson:</dt> 
                       <dd class="active"><a href="web-basics.html">Anatomy of a URL</a></dd> 
@@ -106,18 +69,18 @@
           <!-- End Sub Nav -->
         
         <div class="row">
-            <div class="small-10 small-centered columns">
+            <div class="medium-10 medium-centered columns">
               <h2 class="head1">How the Server Responds</h2>
             </div>
         </div>
         
         <div class="row">
-            <div class="small-10 small-centered columns">
+            <div class="medium-10 medium-centered columns">
               <h3 class="head2">Given this HTTP GET request:</h3>
             </div>
         </div>
         <div class="row">
-            <div class="small-10 small-centered columns">
+            <div class="medium-10 medium-centered columns">
                 <h4>
                     http://
                     <span class="junhighlight" id="server">localhost:8080</span>/
@@ -127,7 +90,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-8 small-centered columns">
+            <div class="medium-8 medium-centered columns">
               <img src="resources/images/request-response2.jpeg" border="0" width="348" height="145"
                alt="request-response image" usemap="#req-resp-map"/>
               <map name="req-resp-map" id="req-resp-map">
@@ -170,7 +133,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-10 small-centered columns">
+            <div class="medium-10 medium-centered columns">
                   <div class="panel">
                       <p>The client (browser) sends an HTTP GET request to the 
                       <a href="#" onmouseover="toggleHighlight('#page','#server')" 
@@ -188,7 +151,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-8 small-centered columns">
+            <div class="medium-8 medium-centered columns">
              
             </div>
         </div>
@@ -198,13 +161,13 @@
         <!-- Footer -->
              
           <footer class="row">
-            <div class="small-12 columns">
+            <div class="medium-12 columns">
               <hr />
               <div class="row">
-                <div class="small-6 columns">
+                <div class="medium-6 columns">
                   <p style="font-size: small;">&copy; Copyright 2014 by Waukesha County Technical College. All rights reserved.</p>
                 </div>
-                <div class="small-6 columns">
+                <div class="medium-6 columns">
                   <ul class="inline-list right">
                     <li style="font-size: small;"><a href="index.html">Home</a></li>
                     <li style="font-size: small;">|</li>
@@ -219,10 +182,9 @@
         
         <!-- Javascript libraries needed by fondation. Always include at bottom of body. -->
         <script src="resources/js/jquery.min.js"></script>
+        <script src="resources/js/vendor/fastclick.js"></script>
         <script src="resources/js/foundation.min.js"></script>
-        <script src="resources/js/foundation/foundation.joyride.js"></script>
-        <script src="resources/js/vendor/jquery.cookie.js"></script>
-        
+
         <!-- My custom app script -->
         <script>
             $(document).foundation();

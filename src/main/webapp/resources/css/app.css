@@ -1,0 +1,40 @@
+ .myhead {
+    color: #1695ce;
+    font-weight:500;
+}
+
+.head2 {
+    color: #04af18;
+    font-weight:500;
+}
+
+.redEm {
+    color: red;
+    font-weight:bold;
+}
+
+.jhighlight {
+    border-style: none;
+    background-color: green;
+    color: white;
+}
+
+.junhighlight {
+    border-style: none;
+    background-color: transparent;
+    color: black;
+}
+
+.imgPopup {
+    background-color: #b6edff;
+    z-index: 7;
+    overflow: visible;
+    position: absolute;
+    padding: 10px;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    
+    -webkit-box-shadow: 10px 10px 5px #888888;
+    box-shadow: 10px 10px 5px #888888;
+}
