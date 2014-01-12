@@ -85,9 +85,9 @@
             <div class="medium-10 medium-centered columns">
                 <h4>
                     http://
-                    <span class="junhighlight myhigh" id="server">localhost:8080</span>/
-                    <span class="junhighlight myhigh" id="folder">Jee7Tutorials</span>/
-                    <span class="jhighlight myhigh" id="page">staticPage.html</span>
+                    <span class="junhighlight demourl" id="server">localhost:8080</span>/
+                    <span class="junhighlight demourl" id="folder">Jee7Tutorials</span>/
+                    <span class="jhighlight demourl" id="page">staticPage.html</span>
                 </h4>
             </div>
         </div>
@@ -141,13 +141,11 @@
                       a <a href="#" onclick="toggleHighlight('#page')">page file name</a> 
                       The server then looks for the file in 
                       the folder <a href="#" onclick="toggleHighlight('#folder')">Jee7Tutorials</a>. 
-                      If it's found the server sends an HTTP Response back to the client as a 
-                      bytestream containing all of the 
+                      If it's found the server sends an HTTP Response back to the client as a bytestream containing all of the 
                       characters in the file, where the web browser on the client machine 
                       interprets that code (using HTML, JavaScript and CSS processing engines) and 
                       then renders the result as pixel-perfect image of what the code represents. 
-                      <a href="web-basics2.txt">Click here</a> to see what this page looks like 
-                      before the code is rendered. Then click the back button to return to this page.
+                      <a href="web-basics2.fake">Click here to see what this page looks like before the code is rendered.</a> 
                       If the file is not found by the server, a 
                       <a href="#" data-reveal-id="modal404">404 Page Not Found</a> error is returned. 
                       <strong>Go ahead and click on various parts of the image above to see more information 
@@ -198,7 +196,20 @@
         <script src="resources/js/foundation.min.js"></script>
 
         <!-- My custom app script -->
-        <script src="resources/js/app.js"></script>
+        <script>
+            $(document).foundation();
+            function toggleHighlight(on_id) {
+                $('.demourl').removeClass('jhighlight').addClass('junhighlight');
+                $(on_id).removeClass('junhighlight').addClass('jhighlight');
+            }
+            function togglePopup(id, state) {
+                if(state == "on") {
+                    $(id).removeClass('hide');
+                } else {
+                    $(id).addClass('hide');
+                }
+            }
+        </script>
 
     </body>
 </html>

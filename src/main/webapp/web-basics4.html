@@ -11,42 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JEE7 Tutorials :: Home</title>
     <link rel="stylesheet" href="resources/css/foundation.min.css" />
+    <link rel="stylesheet" href="resources/css/app.css" />
     
     <!-- Custom styles just for this page -->
     <style type="text/css">
-        .jhighlight {
-            border-style: none;
-            background-color: green;
-            color: white;
-        }
-        .junhighlight {
-            border-style: none;
-            background-color: transparent;
-            color: black;
-        }
-        .head1 {
-            color: #1695ce;
-            font-weight:500;
-        }
-        .head2 {
-            color: #04af18;
-            font-weight:500;
-        }
-        .imgPopup {
-            background-color: #b6edff;
-            z-index: 7;
-            overflow: visible;
-            position: absolute;
-            padding: 10px;
-            
-            -webkit-box-shadow: 10px 10px 5px #888888;
-            box-shadow: 10px 10px 5px #888888;
-        }
-        .redEm {
-            color: red;
-            font-weight:bold;
-        }
-
     </style>
     
     <!-- Supports older browsers and detects mobile devices -->
@@ -83,85 +51,50 @@
               </ul>
             </section>
           </nav>
-
+       </div>
           <!-- End Top Bar -->
           
           <!-- Sub Nav -->
           <div class="row">
-            <div class="small-10 small-centered columns">
-                  <dl class="sub-nav"> 
-                      <dt>Prev Lesson:</dt> 
-                      <dd class="active"><a href="web-basics2.html">Dynamic GET Responses</a></dd> 
-                      <dt>Next Lesson:</dt> 
-                      <dd class="active"><a href="#">Unknown</a></dd> 
-                  </dl>
+            <div class="medium-10 medium-centered columns">
+               <ul class="pagination">
+                <li class="unavailable"><a href="#">WEB BASICS NAVIGATION: </a></li>
+                <li class="arrow"><a href="web-basics3.html">&laquo;</a></li>
+                <li><a href="web-basics.html">1</a></li>
+                <li><a href="web-basics2.html">2</a></li>
+                <li><a href="web-basics3.html">3</a></li>
+                <li class="current"><a href="web-basics4.html">4</a></li>
+                <li class="arrow"><a href="">&raquo;</a></li>
+              </ul> 
             </div>
-        </div>
-       </div>
         <!-- End Sub Nav -->
         
         <div class="row">
-            <div class="small-10 small-centered columns">
+            <div class="medium-10 medium-centered columns">
               <h2 class="head1">How the Server Responds to POST Requests</h2>
             </div>
         </div>
         
         <div class="row">
-            <div class="small-10 small-centered columns">
+            <div class="medium-10 medium-centered columns">
               <h3 class="head2">Given this HTTP POST request:</h3>
             </div>
         </div>
         <div class="row">
-            <div class="small-10 small-centered columns">
+            <div class="medium-10 medium-centered columns">
                 <h4>
                     http://
-                    <span class="junhighlight" id="server">localhost:8080</span>/
-                    <span class="junhighlight" id="folder">Jee7Tutorials</span>/
-                    <span class="junhighlight" id="page" onclick="location.href='dynamicPage.jsp?name=Butkus'">dynamicPage.jsp</span>
-                    <span class="jhighlight" id="qs">?name=Butkus</span>
+                    <span class="junhighlight myhigh" id="server">localhost:8080</span>/
+                    <span class="junhighlight myhigh" id="folder">Jee7Tutorials</span>/
+                    <span class="junhighlight myhigh" id="page" onclick="location.href='dynamicPage.jsp?name=Butkus'">dynamicPage.jsp</span>
+                    <span class="jhighlight myhigh" id="qs">?name=Butkus</span>
                 </h4>
             </div>
         </div>
         
         <div class="row">
-            <div class="small-10 small-centered columns">
-                  <div class="panel">
-                      <p>Just as in the previous demo the client (browser) sends an HTTP GET request to the 
-                      <a href="#" onmouseover="toggleHighlight('#qs','#server')" 
-                      onmouseout="toggleHighlight('#server','#qs')">server</a> for 
-                      a <a href="#" onmouseover="toggleHighlight('#qs','#page')" 
-                      onmouseout="toggleHighlight('#page','#qs')">file</a>. The server then looks for the file in 
-                      the folder <a href="#" onmouseover="toggleHighlight('#qs','#folder')" 
-                      onmouseout="toggleHighlight('#folder','#qs')">Jee7Tutorials</a>. 
-                      But this time something very different happens when the server finds the 
-                      file. Because it ends with a &quot;.jsp&quot; extension the server looks for a 
-                      matching processing engine -- in this case a JavaServer Page engine (JSP). 
-                      Finding that it parses (looks through) all the source code in the file, looking 
-                      for <a href="#" onmouseover="togglePopup('#javaMixinsTip','on')">Java code mixed in with the HTML</a>. 
-                      When it finds this code it immediately 
-                      executes it and adds any resulting text to the HTML, effectively modifying the original 
-                      page. Then and only then does the server send the response back to the client. The 
-                      response is different now, click the <a href="#" onmouseover="toggleHighlight('#qs','#page')" 
-                      onmouseout="toggleHighlight('#qs','#page')">file name</a> above to see the response.</p>
-                </div>
-                <div id="javaMixinsTip" onclick="togglePopup('#javaMixinsTip','off')" style="top:-160px; left:60px; width:520px;" class="hide imgPopup">
-                  <p>The code highlighted in green is java code mixed in with the HTML. This is <strong style="color:red;">the code 
-                          that gets executed immediately on the server</strong> after it responds to the request for the page.</p>
-                  <p><img src="resources/images/dynamicPageClip.gif" alt="dynamic page code"></p>
-                  <p>It's job is to take the QueryString parameter value, which gets sent along with the 
-                      request (name = "Butkus") and use that value in the HTML response, effectively modifying 
-                      the HTML code in process.
-                  </p>
-              </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-10 small-centered columns">
-                <h3 class="head2">Try it</h3>
-                <p>Click the <a href="#" onmouseover="toggleHighlight('#qs','#page')" 
-                   onmouseout="toggleHighlight('#qs','#page')" 
-                   onclick="location.href='dynamicPage.jsp?name=Butkus'">file name</a> 
-                    above to see the response.</p>
+            <div class="medium-10 medium-centered columns">
+            ... coming soon ...
             </div>
         </div>
         
@@ -169,14 +102,14 @@
         
         <!-- Footer -->
              
-          <footer class="row">
-            <div class="small-12 columns">
+           <footer class="row">
+            <div class="medium-12 columns">
               <hr />
               <div class="row">
-                <div class="small-6 columns">
+                <div class="medium-6 columns">
                   <p style="font-size: small;">&copy; Copyright 2014 by Waukesha County Technical College. All rights reserved.</p>
                 </div>
-                <div class="small-6 columns">
+                <div class="medium-6 columns">
                   <ul class="inline-list right">
                     <li style="font-size: small;"><a href="index.html">Home</a></li>
                     <li style="font-size: small;">|</li>
@@ -186,7 +119,7 @@
               </div>
             </div>
           </footer>
-         
+        
           <!-- End Footer -->        
         
         <!-- Javascript libraries needed by fondation. Always include at bottom of body. -->
@@ -196,30 +129,7 @@
         <script src="resources/js/vendor/jquery.cookie.js"></script>
         
         <!-- My custom app script -->
-        <script>
-            $(document).foundation();
-            function toggleHighlight(on_id, off_id) {
-                $("#page").removeClass('jhighlight').addClass('junhighlight');
-                $("#qs").removeClass('junhighlight').addClass('jhighlight');
-                
-                $(on_id).removeClass('jhighlight').addClass('junhighlight');
-                $(off_id).removeClass('junhighlight').addClass('jhighlight');
-            }
-            function togglePopup(id, state) {
-                if(state == "on") {
-                    $(id).removeClass('hide');
-                } else {
-                    $(id).addClass('hide');
-                }
-                
-                if(id.indexOf("javaMixins") != -1) {
-                    setTimeout(function () {
-                        $(id).addClass('hide');
-                    }, 4000);
-                }
-
-            }
-        </script>
+        <script src="resources/js/app.js"></script>
 
     </body>
 </html>

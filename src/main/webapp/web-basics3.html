@@ -51,22 +51,24 @@
               </ul>
             </section>
           </nav>
-
+     </div>
+  
           <!-- End Top Bar -->
           
           <!-- Sub Nav -->
           <div class="row">
             <div class="medium-10 medium-centered columns">
-                  <dl class="sub-nav"> 
-                      <dt>Prev Lesson:</dt> 
-                      <dd class="active"><a href="web-basics2.html">Static Server Responses</a></dd> 
-                      <dt>Next Lesson:</dt> 
-                      <dd class="active"><a href="web-basics4.html">HTTP POST Responses</a></dd> 
-                  </dl>
-            </div>
+               <ul class="pagination">
+                <li class="unavailable"><a href="#">WEB BASICS NAVIGATION: </a></li>
+                <li class="arrow"><a href="web-basics2.html">&laquo;</a></li>
+                <li><a href="web-basics.html">1</a></li>
+                <li><a href="web-basics2.html">2</a></li>
+                <li class="current"><a href="web-basics3.html">3</a></li>
+                <li><a href="web-basics4.html">4</a></li>
+                <li class="arrow"><a href="web-basics4.html">&raquo;</a></li>
+              </ul> 
         </div>
-       </div>
-        <!-- End Sub Nav -->
+       <!-- End Sub Nav -->
         
         <div class="row">
             <div class="medium-10 medium-centered columns">
@@ -84,10 +86,10 @@
             <div class="medium-10 medium-centered columns">
                 <h4>
                     http://
-                    <span class="junhighlight" id="server">localhost:8080</span>/
-                    <span class="junhighlight" id="folder">Jee7Tutorials</span>/
-                    <span class="junhighlight" id="page" onclick="location.href='dynamicPage.jsp?name=Butkus'">dynamicPage.jsp</span>
-                    <span class="jhighlight" id="qs">?name=Butkus</span>
+                    <span class="junhighlight myhigh" id="server">localhost:8080</span>/
+                    <span class="junhighlight myhigh" id="folder">Jee7Tutorials</span>/
+                    <span class="junhighlight myhigh" id="page" onclick="location.href='dynamicPage.jsp?name=Butkus'">dynamicPage.jsp</span>
+                    <span class="jhighlight myhigh" id="qs">?name=Butkus</span>
                 </h4>
             </div>
         </div>
@@ -95,25 +97,23 @@
         <div class="row">
             <div class="medium-10 medium-centered columns">
                   <div class="panel">
-                      <p>Just as in the previous demo the client (browser) sends an HTTP GET request to the 
-                      <a href="#" onmouseover="toggleHighlight('#qs','#server')" 
-                      onmouseout="toggleHighlight('#server','#qs')">server</a> for 
-                      a <a href="#" onmouseover="toggleHighlight('#qs','#page')" 
-                      onmouseout="toggleHighlight('#page','#qs')">file</a>. The server then looks for the file in 
-                      the folder <a href="#" onmouseover="toggleHighlight('#qs','#folder')" 
-                      onmouseout="toggleHighlight('#folder','#qs')">Jee7Tutorials</a>. 
+                      <p>Just as in the previous demo the client (browser) sends an HTTP GET 
+                      request to the <a href="#" onclick="toggleHighlight('#server')">server</a> for 
+                      a <a href="#" onclick="toggleHighlight('#page')">page file name</a>. 
+                      The server then looks for the file in 
+                      the folder <a href="#" onclick="toggleHighlight('#folder')">Jee7Tutorials</a>. 
                       But this time something very different happens when the server finds the 
-                      file. Because it ends with a &quot;.jsp&quot; extension the server looks for a 
+                      file. Because it ends with the extension &quot;.jsp&quot; the server looks for a 
                       matching processing engine -- in this case a JavaServer Page engine (JSP). 
                       Finding that it parses (looks through) all the source code in the file, looking 
-                      for <a href="#" onmouseover="togglePopup('#javaMixinsTip','on')">Java code mixed in with the HTML</a>. 
+                      for <a href="#" data-reveal-id="javaMixinsTip">Java code mixed in with the HTML</a>. 
                       When it finds this code it immediately 
                       executes it and adds any resulting text to the HTML, effectively modifying the original 
                       page. Then and only then does the server send the response back to the client. The 
-                      response is different now, click the <a href="#" onmouseover="toggleHighlight('#qs','#page')" 
-                      onmouseout="toggleHighlight('#qs','#page')">file name</a> above to see the response.</p>
+                      response is different now, click the <a href="#" onclick="toggleHighlight('#page')">
+                      file name</a> above to see the response.</p>
                 </div>
-                <div id="javaMixinsTip" onclick="togglePopup('#javaMixinsTip','off')" style="top:-160px; left:60px; width:520px;" class="hide imgPopup">
+                <div id="javaMixinsTip" class="reveal-modal medium" data-reveal>
                   <p>The code highlighted in green is java code mixed in with the HTML. This is <strong style="color:red;">the code 
                           that gets executed immediately on the server</strong> after it responds to the request for the page.</p>
                   <p><img src="resources/images/dynamicPageClip.gif" alt="dynamic page code"></p>
@@ -121,31 +121,18 @@
                       request (name = "Butkus") and use that value in the HTML response, effectively modifying 
                       the HTML code in process.
                   </p>
+                  <a class="close-reveal-modal">&#215;</a>
               </div>
             </div>
         </div>
         <div class="row">
             <div class="medium-10 medium-centered columns">
                 <h3 class="head2">Try it</h3>
-                <p>Click the <a href="#" onmouseover="toggleHighlight('#qs','#page')" 
-                   onmouseout="toggleHighlight('#qs','#page')" 
-                   onclick="location.href='dynamicPage.jsp?name=Butkus'">file name</a> 
+                <p>Click the <a href="#" onclick="toggleHighlight('#page')">page file name</a> 
                     above to see the response.</p>
             </div>
         </div>
-        
-        <!-- Just a test for a future video feature
-        <div class="row">
-            <div class="medium-10 medium-centered columns">
-                <a href="#"  data-reveal-id="myModal">Click Me For A Modal</a>
-                <div id="myModal" class="reveal-modal" data-reveal>
-                    <div class="flex-video">
-                        <iframe width="420" height="315" src="http://www.youtube.com/embed/uzV-SsoGTXs" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
+ 
         
         <!-- Footer -->
              
@@ -175,30 +162,7 @@
         <script src="resources/js/foundation.min.js"></script>
 
         <!-- My custom app script -->
-        <script>
-            $(document).foundation();
-            function toggleHighlight(on_id, off_id) {
-                $("#page").removeClass('jhighlight').addClass('junhighlight');
-                $("#qs").removeClass('junhighlight').addClass('jhighlight');
-                
-                $(on_id).removeClass('jhighlight').addClass('junhighlight');
-                $(off_id).removeClass('junhighlight').addClass('jhighlight');
-            }
-            function togglePopup(id, state) {
-                if(state == "on") {
-                    $(id).removeClass('hide');
-                } else {
-                    $(id).addClass('hide');
-                }
-                
-                if(id.indexOf("javaMixins") != -1) {
-                    setTimeout(function () {
-                        $(id).addClass('hide');
-                    }, 4000);
-                }
-
-            }
-        </script>
+        <script src="resources/js/app.js"></script>
 
     </body>
 </html>

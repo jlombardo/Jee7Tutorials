@@ -7,6 +7,12 @@
 
 // Immediately initialize foundation (must happen at page load)
 $(document).foundation();
+
+// Expects the class myhigh on elements
+function toggleHighlight(on_id) {
+    $('.myhigh').removeClass('jhighlight').addClass('junhighlight');
+    $(on_id).removeClass('junhighlight').addClass('jhighlight');
+}
              
 // When the start button is clicked we start joyride and process
 // joyride 'Next' buttons via css class designation. Note that when
